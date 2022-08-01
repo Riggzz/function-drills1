@@ -12,8 +12,11 @@
 */
 
 //CODE HERE
-function helloworld = 'hello world'
+const helloWorld = function(){
+  console.log('goodbye world!')
+}
 
+helloWorld()
 
 
 ////////////////// PROBLEM 2 ////////////////////
@@ -23,6 +26,9 @@ function helloworld = 'hello world'
 */
 
 //CODE HERE
+const jsNinja = () => {
+  return 'I am a Javascript conosieur'
+}
 
 
 ////////////////// PROBLEM 3 ////////////////////
@@ -33,7 +39,11 @@ function helloworld = 'hello world'
 */
 
 //CODE HERE
+const printName = function(name){
+  console.log(name)
+}
 
+printName('billy jean')
 
 ////////////////// PROBLEM 4 ////////////////////
 /*
@@ -46,7 +56,11 @@ function helloworld = 'hello world'
 */
 
 //CODE HERE
+const greeting = function(name){
+  console.log(`hello ${name}`)
+}
 
+greeting('SPEED')
 
 ////////////////// PROBLEM 5 ////////////////////
 
@@ -61,6 +75,18 @@ function helloworld = 'hello world'
 
 //CODE HERE
 
+const comapareNums = (number1, number2) => {
+  if(number1 > number2){
+    return number1
+  }else if (number1 < number2){
+    return number2
+  }else{
+    return(number)
+  }
+  }
+
+comapareNums(4,5)
+
 
 ////////////////// PROBLEM 6 ////////////////////
 /*
@@ -71,6 +97,14 @@ function helloworld = 'hello world'
 */
 
 //CODE HERE
+ const add = function(string1, string2){
+  Number(string1)
+  Number(string2)
+  return string1 + string2
+  }
+ 
+ const sum = add(1, 2)
+ console.log(sum)
 
 
 ////////////////// PROBLEM 7 ////////////////////
@@ -86,7 +120,7 @@ const exclaim = function(str) {
 
 // console.log('arrow')
 // console.log('declaration')
-// console.log('expression')
+ console.log('expression')
 
 
 
@@ -101,7 +135,7 @@ const exclaimTwo = str => {
   return str.toUpperCase() + '!!!'
 }
 
-// console.log('arrow')
+ console.log('arrow')
 // console.log('declaration')
 // console.log('expression')
 
@@ -126,8 +160,8 @@ function exclaimFour(str) {
 }
 
 // console.log('arrow')
-// console.log('declaration')
-// console.log('expression')
+ console.log('declaration')
+//console.log('expression')
 
 
 ////////////////// PROBLEM 10 ////////////////////
@@ -140,8 +174,17 @@ function exclaimFour(str) {
 */
 
 //CODE HERE
-
-
+const nameCheck = function(name){
+  if(name === 'steven'){
+    return 'what is up steven'
+  }else if (name === 'bryan'){
+    return 'hey bryan'
+  }else{
+    return `cool name ${name}`
+  }
+}
+let nameGreeting = nameCheck('bryan')
+console.log(nameGreeting)
 ////////////////// PROBLEM 11 ////////////////////
 /*
   Write a function called faveColorFinder that takes in one parameter called color (which will be a string).
@@ -153,7 +196,18 @@ function exclaimFour(str) {
 */
 
 //CODE HERE
-
+const faveColorFinder = function(color){
+  if (color === 'red'){
+    return 'red is a great color'
+  } else if (color === 'green'){
+    return 'green is a solid favorite color'
+  } else if (color === 'black'){
+     return 'so trendy'
+  } else {
+    return'you need to evaluate your favorite color choice'}
+}
+const colorRating = faveColorFinder('pine green')
+console.log(colorRating)
 
 ////////////////// PROBLEM 12 ////////////////////
 let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
@@ -164,8 +218,12 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 */
 
 //CODE HERE
-
-
+const printAllNames = function(namesArr){
+  for (let i = 0; i < namesArr.length; i++){
+    console.log(namesArr[i])
+  }
+}
+printAllNames(namesArr)
 ////////////////// PROBLEM 13 ////////////////////
 /*
   Create a function called thatsOdd that takes in a single argument (a number).
@@ -175,8 +233,15 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 */
 
 //CODE HERE
-
-
+const thatsOdd = function(num){
+  if (num % 2 === 0){
+    return 'thats not odd'
+  } else {
+    return 'that is odd indeed'
+  }
+}
+const oddChecker = thatsOdd(42)
+console.log(oddChecker)
 ////////////////// PROBLEM 14 ////////////////////
 
 /*
@@ -188,7 +253,10 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 */
 
 //CODE HERE
+const bestMovie = (movie) => `${movie} is the best movie ever!`
 
+
+console.log(bestMovie('Speed Racer'))
 
 ////////////////// PROBLEM 15 ////////////////////
 let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
@@ -202,8 +270,17 @@ let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
 */
 
 //CODE HERE
+const bigOrSmall = function(arr){
+  answers = []
+    for (i = 0; i < arr.length; i++){
+      if (bigOrSmallArray[i] <= 100){
+        answers.push('small')
+      }else {answers.push('big')}
+   }return answers
+}
 
-
+const arrayEvaluator = bigOrSmall(bigOrSmallArray)
+console.log(bigOrSmall(bigOrSmallArray))
 ////////////////// PROBLEM 16 ////////////////////
 let contestants = ['Katniss', 'Peeta', 'Fox-face', 'Glimmer', 'Cato', 'Rue', 'Thresh', 'Clove', 'Marvel']
 let loser = 'Glimmer'
@@ -213,8 +290,14 @@ let loser = 'Glimmer'
 */
 
 //CODE HERE
-
-
+const theEliminator = function(contestants, loser){
+  for (i = 0; i < contestants.length; i++){
+    if (contestants[i] === loser){
+      contestants.splice([i], 1)
+    }
+  }return contestants
+}
+console.log(theEliminator(contestants, loser))
 ////////////////// PROBLEM 17 ////////////////////
 let sampleString = "Hi, my name is Kylo."
 /*
@@ -223,7 +306,10 @@ let sampleString = "Hi, my name is Kylo."
 */
 
 //CODE HERE
-
+const string3 = function(sampleS){
+  console.log(sampleS.toUpperCase)
+}
+string3(sampleString)
 
 ////////////////// PROBLEM 18 ////////////////////
 /*
