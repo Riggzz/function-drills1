@@ -307,7 +307,7 @@ let sampleString = "Hi, my name is Kylo."
 
 //CODE HERE
 const string3 = function(sampleS){
-  console.log(sampleS.toUpperCase)
+  console.log(sampleS.toUpperCase())
 }
 string3(sampleString)
 
@@ -322,6 +322,20 @@ string3(sampleString)
   return 'must provide a valid email address'
 */
 
+const emailCheck = function(email){
+  let newEmail = String(email).trim()
+  if (newEmail.includes('@')){
+    return 'email verified'
+  }else{
+    return 'must provide a valid email address'
+  }
+}
+console.log(emailCheck('jbsports@gmail.com'))
+
+
+
+
+
 ////////////////// PROBLEM 19 ////////////////////
 /*
   Write a function, naming it whatever you believe to be appropriate, that buys as many chocolate frogs as possible with a certain amount of gold. Each chocolate frog costs 3 gold. Your function should take in a single parameter, which is the amount of gold you are willing to spend. Your function should return a total amount of chocolate frogs you were able to purchase.
@@ -330,6 +344,12 @@ string3(sampleString)
 
 //CODE HERE
 
+function frogPurchaser(gold){
+return gold / 3
+}
+
+let totalFrogs = frogPurchaser(50)
+  
 
 ////////////////// PROBLEM 20 ////////////////////
 /*
@@ -337,6 +357,15 @@ string3(sampleString)
 */
 
 //CODE HERE
+function frogPurchaser2(gold){
+  if (gold % 3 === 0){
+    return gold / 3
+  } else if((gold - 1) % 3 === 0){
+    return (gold - 1) / 3
+  }else {
+    return (gold- 2) / 3
+  }
+}
 
 
 ////////////////// PROBLEM 21 ////////////////////
@@ -346,7 +375,19 @@ let sampleArray = [0,1,2,3,4,7,5,6,8,9]
 */
 
 //CODE HERE
+function checkArrayAscending(arr) {
+  let comparisonValue = arr[0]
+  for (let i = 1; i < arr.length - 1; i++) {
+    if (arr[i] <= comparisonValue) {
+      return false
+    } else {
+      comparisonValue = arr[i]
+    }
+  }
+  return true
+}
 
+let arrayIsAscending = checkArrayAscending(sampleArray)
 
 ////////////////// PROBLEM 22 ////////////////////
 
@@ -370,13 +411,13 @@ function pond() {
 */
 
 //This array should contain the variable names (as strings) accessible in the global scope.
-let globalScope = []
+let globalScope = ["duck"]
 
 //This array should contain the variable names (as strings) accessible in the bathroom function.
-let bathroomScope = []
+let bathroomScope = ["duck", "rubberduck"]
 
 //This array should contain the variable names (as strings) accessible in the bathtub function.
-let bathtubScope = []
+let bathtubScope = ["duck", "sailorduck", "rubberduck"]
 
 //This array should contain the variable names (as strings) accessible in the pond function.
 let pondScope = []
